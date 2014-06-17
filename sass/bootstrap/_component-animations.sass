@@ -1,0 +1,23 @@
+//
+// Component animations
+// --------------------------------------------------
+
+// Heads up!
+//
+// We don't use the `.opacity()` mixin here since it causes a bug with text
+// fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
+
+.fade
+    opacity: 0
+    +transition(opacity 0.15s linear)
+    &.in
+        opacity: 1
+
+.collapsable
+    max-height: 400px
+    overflow: hidden
+    +transition(max-height 0.35s ease)
+
+    &.collapsed
+        max-height: 0
+    

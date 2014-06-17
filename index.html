@@ -2,11 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tom Luijten - Portfolio</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<div id="content">
 		<div id="wrapper">
+			<nav class="menu-wrapper">
+				<div class="logo-name">
+					<h2>Tom Luijten</h2>
+				</div>
+				<ul class="menu">
+					<a href="#"><li class="menu-item">HOME</li></a>
+					<a href="#"><li class="menu-item">ABOUT ME</li></a>
+					<a href="#"><li class="menu-item">PROJECTS</li></a>
+					<a href="#"><li class="menu-item">CONTACT</li></a>
+				</ul>
+			</nav>
+			<div class="page one" style="background-color: black;">
+				<nav class="footer-nav home-nav">
+					<ul class="footer-nav-content"> 
+						<a href="#"><li class="footer-item devel">FRONT-END DEVELOPMENT</li></a>
+						<a href="#"><li class="footer-item audio">AUDIOVISUAL DESIGN</li></a>
+						<a href="#"><li class="footer-item music">MUSICIAN</li></a>
+					</ul>
+				</nav>
+
+				<div id="slider-home">
+					<div class="1" style="width: 100%; height: 100%; background-image: url(../images/drum.jpg); background-size: cover"></div>
+					<div class="2" style="width: 100%; height: 100%; background-image: url(../images/bass.jpg); background-size: cover"><!-- <img id="2" src="images/drum.jpg"/> --></div>
+					<div class="3" style="width: 100%; height: 100%; background-image: url(../images/guitar.jpg); background-size: cover"></div>
+
+					<!-- <img id="1" src="images/guitar.jpg"/>
+					<img id="2" src="images/drum.jpg"/>
+					<img id="3" src="images/guitar.jpg"/> -->
+				</div>
+
+				<a class="button-next right" onclick="" href="#">Next</a>
+				<a class="buttons-previous left" href="#">Previous</a>
+			</div>
+
+
+			<div class="page two"></div>
+			<div class="page three"></div>
+			<div class="page four"></div>
+			<div class="page five"></div>
+		</div>
 	</div>
 </body>
 </html>

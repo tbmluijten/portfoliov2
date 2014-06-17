@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
       css: {
         files: 'sass/**/*.sass',
-                tasks: ['sass', 'autoprefixer']
+                tasks: ['sass']
 
       },
             html: {

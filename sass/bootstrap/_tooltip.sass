@@ -1,0 +1,150 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+// Base class
+.tooltip
+    font-family: $font-family-serif
+    font-style: italic
+    position: absolute
+    z-index: $zindex-tooltip
+    display: block
+    visibility: visible
+    font-size: $font-size-small
+    line-height: 1.4
+    +opacity(0)
+    &.in
+        +opacity(1)
+    &.top
+        margin-top: -3px
+        padding: $tooltip-arrow-width 0
+    &.right
+        margin-left: 3px
+        padding: 0 $tooltip-arrow-width
+    &.bottom
+        margin-top: 3px
+        padding: $tooltip-arrow-width 0
+    &.left
+        margin-left: -3px
+        padding: 0 $tooltip-arrow-width
+
+// Wrapper for the tooltip content
+.tooltip-inner
+    max-width: $tooltip-max-width
+    min-width: $tooltip-max-width / 2
+    padding: 3px 8px
+    color: $tooltip-color
+    text-align: center
+    text-decoration: none
+    background-color: $tooltip-bg
+    border-radius: 2px
+    +box-shadow(1px 1px 4px rgba(50, 50, 50, 0.4))
+
+.no-boxshadow .tooltip-inner
+    border: 1px solid #ccc
+
+// Arrows
+.tooltip-arrow
+    position: absolute
+    width: 0
+    height: 0
+    border-color: transparent transparent transparent transparent
+    border-style: solid
+
+.tooltip
+    &.top .tooltip-arrow
+        bottom: 0
+        left: 50%
+        margin-left: -$tooltip-arrow-width
+        border-width: $tooltip-arrow-width $tooltip-arrow-width 0
+        border-top-color: $tooltip-arrow-color
+
+        &:after
+            position: absolute
+            width: 0
+            height: 0
+            border-width: $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size
+            border-color: darken($tooltip-bg, 10%) transparent transparent transparent
+            border-style: solid
+            left: -5px
+            top: -4px
+            z-index: -3
+            content: ""
+
+    &.top-left .tooltip-arrow
+        bottom: 0
+        left: $tooltip-arrow-width
+        border-width: $tooltip-arrow-width $tooltip-arrow-width 0
+        border-top-color: $tooltip-arrow-color
+    &.top-right .tooltip-arrow
+        bottom: 0
+        right: $tooltip-arrow-width
+        border-width: $tooltip-arrow-width $tooltip-arrow-width 0
+        border-top-color: $tooltip-arrow-color
+    &.right .tooltip-arrow
+        top: 50%
+        left: 0
+        margin-top: -$tooltip-arrow-width
+        border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0
+        border-right-color: $tooltip-arrow-color
+
+        &:after
+            position: absolute
+            width: 0
+            height: 0
+            border-width: $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0
+            border-color: transparent darken($tooltip-bg, 10%) transparent transparent
+            border-style: solid
+            left: -1px
+            top: -5px
+            z-index: -3
+            content: ""
+
+    &.left .tooltip-arrow
+        top: 50%
+        right: 0
+        margin-top: -$tooltip-arrow-width
+        border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width
+        border-left-color: $tooltip-arrow-color
+
+        &:after
+            position: absolute
+            width: 0
+            height: 0
+            border-width: $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size
+            border-color: transparent transparent transparent darken($tooltip-bg, 10%)
+            border-style: solid
+            left: -4px
+            top: -5px
+            z-index: -3
+            content: ""
+
+    &.bottom .tooltip-arrow
+        top: 0
+        left: 50%
+        margin-left: -$tooltip-arrow-width
+        border-width: 0 $tooltip-arrow-width $tooltip-arrow-width
+        border-bottom-color: $tooltip-arrow-color
+
+        &:after
+            position: absolute
+            width: 0
+            height: 0
+            border-width: 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size
+            border-color: transparent transparent darken($tooltip-bg, 10%) transparent
+            border-style: solid
+            left: -5px
+            top: -1px
+            z-index: -3
+            content: ""
+
+    &.bottom-left .tooltip-arrow
+        top: 0
+        left: $tooltip-arrow-width
+        border-width: 0 $tooltip-arrow-width $tooltip-arrow-width
+        border-bottom-color: $tooltip-arrow-color
+    &.bottom-right .tooltip-arrow
+        top: 0
+        right: $tooltip-arrow-width
+        border-width: 0 $tooltip-arrow-width $tooltip-arrow-width
+        border-bottom-color: $tooltip-arrow-color

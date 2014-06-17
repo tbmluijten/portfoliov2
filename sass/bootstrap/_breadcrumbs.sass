@@ -1,0 +1,27 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+.breadcrumb
+    padding: 0
+    margin-bottom: $line-height-computed
+    list-style: none
+    background-color: $breadcrumb-bg
+    border-radius: $border-radius-base
+    > li
+        display: inline-block
+        color: $breadcrumb-color
+
+        > a
+            color: inherit
+
+        + li:before
+            content: "#{$breadcrumb-separator}\00a0"
+            // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 1px
+
+            @media screen and (min-width: $screen-xs-min)
+                padding: 0 5px
+
+        &:last-child
+            color: $breadcrumb-active-color
